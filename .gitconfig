@@ -1,0 +1,28 @@
+[user]
+    name = Yash Agrawal
+    email = yagrawl2@gmail.com
+
+[alias]
+  ci = commit -m
+  cv = ci --verbose
+  co = checkout
+  st = status
+  br = branch
+
+  # checkout 'main' branch and pull latest changes
+  main = !git co main && git pull
+
+  # see your staged changes
+  staged = diff --cached
+
+  # unstage a specific file. usage: git unstage <filepath>
+  unstage = reset --
+
+  # reset the last commit
+  undo = reset HEAD~ --mixed
+
+  # list all aliases
+  aliases = !git config --get-regexp alias | cut -c 7-
+
+[credential]
+	helper = osxkeychain
