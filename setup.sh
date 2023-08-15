@@ -18,6 +18,12 @@ create_symlink() {
   fi
 }
 
+# zsh
 create_symlink ~/dotfiles/.zshrc ~/.zshrc
 create_symlink ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+
+# git
 create_symlink ~/dotfiles/.gitconfig ~/.gitconfig
+
+# vim
+create_symlink ~/dotfiles/.vimrc ~/.vimrc
