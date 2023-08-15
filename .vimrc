@@ -8,6 +8,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -52,3 +53,27 @@ let g:lightline = {
       \ },
       \ }
 
+" Ale configurations
+
+" Enable linting by default
+let g:ale_enabled = 1
+
+" Only lint while in normal mode
+let g:ale_lint_on_text_changed = 'normal'
+
+" Automatically lint when leaving insert mode
+let g:ale_lint_on_insert_leave = 1
+
+" Enable signs showing in the gutter to reduce interruptive visuals
+let g:ale_set_signs = 1
+
+" Only run linters that are explicitly listed below
+let g:ale_linters_explicit = 1
+
+" Disable highlighting as it interferes with readability and accessibility
+let g:ale_set_highlights = 0
+let g:ale_linters = {}
+let g:ale_fixers = {}
+
+" Git-gutter reload
+let g:gitgutter_updatetime = 10
