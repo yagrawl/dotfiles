@@ -27,3 +27,6 @@ create_symlink ~/dotfiles/.gitconfig ~/.gitconfig
 
 # vim
 create_symlink ~/dotfiles/.vimrc ~/.vimrc
+
+# tmux
+create_symlink ~/dotfiles/.tmux.conf ~/.tmux.conf
