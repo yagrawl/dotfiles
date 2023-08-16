@@ -33,3 +33,7 @@ Plugin Manager:
 ```
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
+
+## Fonts
+
+- [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
