@@ -39,6 +39,9 @@ set laststatus=2
 " Hide unnecessary line below status eg. -- INSERT --
 set noshowmode
 
+" Enable delete key -- https://unix.stackexchange.com/a/307974
+set backspace=indent,eol,start
+
 " Status line
 let g:lightline = {
       \ 'colorscheme': 'wombat',
