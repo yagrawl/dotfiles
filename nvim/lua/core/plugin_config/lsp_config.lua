@@ -55,3 +55,5 @@ lspconfig.jsonls.setup {
   on_attach = on_attach
 }
 
+-- add binding to launch terminal
+vim.keymap.set('n', '\\t', ':Lspsaga term_toggle<CR>')
