@@ -26,3 +26,8 @@ vim.cmd [[ set noswapfile ]]
 
 --Line numbers
 vim.wo.number = true
+
+-- Exit out of vim if NvimTree is the only window left
+vim.cmd [[
+  autocmd BufEnter * if (winnr("$") == 1 && &filetype == "NvimTree") | q | endif
+]]
