@@ -1,4 +1,9 @@
-require('telescope').setup()
+require('telescope').setup({
+  defaults = {
+    file_ignore_patterns = { 'node_modules', 'target', 'dist' },
+  },
+})
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '\\ff', builtin.find_files, {})

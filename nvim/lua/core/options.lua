@@ -27,6 +27,9 @@ vim.cmd [[ set noswapfile ]]
 --Line numbers
 vim.wo.number = true
 
+-- Automatically save the buffer when focus is lost
+vim.cmd([[autocmd BufLeave * silent! wall]])
+
 -- Exit out of vim if NvimTree is the only window left
 vim.cmd [[
   autocmd BufEnter * if (winnr("$") == 1 && &filetype == "NvimTree") | q | endif
