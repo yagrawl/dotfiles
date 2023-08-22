@@ -39,8 +39,18 @@ return require('packer').startup(function(use)
 		'nvimdev/lspsaga.nvim'
   }
 
+  -- autocomplete
+  use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip'
+  }
+
+  -- utilities
   use 'preservim/vimux'
   use 'tpope/vim-commentary'
+
+  -- git
   use 'lewis6991/gitsigns.nvim'
 
   use {
