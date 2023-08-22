@@ -53,6 +53,13 @@ return require('packer').startup(function(use)
   -- git
   use 'lewis6991/gitsigns.nvim'
 
+  -- learning
+  use {
+   "m4xshen/hardtime.nvim",
+   requires = { 'MunifTanjim/nui.nvim', "nvim-lua/plenary.nvim" }
+  }
+
+  -- telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.2',
     requires = { {'nvim-lua/plenary.nvim'} }
