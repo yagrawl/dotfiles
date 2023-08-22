@@ -26,6 +26,10 @@ return require('packer').startup(function(use)
   use 'github/copilot.vim'
 
   use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'akinsho/bufferline.nvim', tag = '*',
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
 
   -- language server protocol
   use {
