@@ -1,12 +1,12 @@
 # dotfiles
 
-A collection of dotfiles for customizing Vim, Tmux, and Git on macOS.
+A collection of dotfiles for customizing Neovim, Tmux, Zsh, and Git on macOS.
 
 ## Introduction
 
-![Terminal Screenshot](https://i.imgur.com/YQUIZL3.png)
+![Terminal Screengrab](https://i.imgur.com/F7qveJO.mp4)
 
-As you might notice, it's not the prettiest thing (yet!). Achieving the perfect development environment is an ever-evolving journey, especially when dealing with highly customizable tools like Neovim and Tmux. This README primarily serves as a manual for my personal use and as a reference for those familiar with the Vim + Tmux setup. Please note that this setup guide is tailored for macOS.
+As you may note, it isn't the prettiest thing (yet!). You can never reach a state where your development environment is absolutely perfect. Especially when you are working with a highly customizable setup like Neovim and Tmux. There are always new plugins to add or tweaks to be made. That in itself can feel intimidating and overwhelming. My initial approach is to get to a usable system with features matching a traditional IDE (e.g., VSCode) and then making changes occasionally (~ every few months) to remove things I haven't used and to add features that will make me more productive.
 
 ## Components
 
@@ -48,12 +48,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/th
 Install tmux and plugin manager
 ```
 brew install tmux
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 Install neovim with packer
 ```
 brew install neovim
+
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
