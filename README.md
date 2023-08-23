@@ -4,7 +4,7 @@ A collection of dotfiles for customizing Neovim, Tmux, Zsh, and Git on macOS.
 
 ## Introduction
 
-![Terminal Screengrab](https://i.imgur.com/F7qveJO.mp4)
+![Terminal Screenshot](https://i.imgur.com/YQUIZL3.png)
 
 As you may note, it isn't the prettiest thing (yet!). You can never reach a state where your development environment is absolutely perfect. Especially when you are working with a highly customizable setup like Neovim and Tmux. There are always new plugins to add or tweaks to be made. That in itself can feel intimidating and overwhelming. My initial approach is to get to a usable system with features matching a traditional IDE (e.g., VSCode) and then making changes occasionally (~ every few months) to remove things I haven't used and to add features that will make me more productive.
 
