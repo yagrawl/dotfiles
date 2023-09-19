@@ -9,8 +9,9 @@
   st = status
   br = branch
 
-  # checkout 'main' branch and pull latest changes
+  # checkout 'main'/'master' branch and pull latest changes
   main = !git co main && git pull
+  master = !git co master && git pull
 
   # see your staged changes
   staged = diff --cached
@@ -26,3 +27,5 @@
 
 [credential]
 	helper = osxkeychain
+[push]
+	default = current
