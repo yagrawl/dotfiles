@@ -33,3 +33,5 @@
 	helper = osxkeychain
 [push]
 	default = current
+[core]
+	editor = nvim
