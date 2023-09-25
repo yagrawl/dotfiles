@@ -25,6 +25,10 @@
   # list all aliases
   aliases = !git config --get-regexp alias | cut -c 7-
 
+  # switch between branches
+  # credit: https://github.com/mculp/dotfiles/blob/main/dot_gitconfig#L10
+  sw = "!git switch $(git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | ag -v '^\\*' | ag -v 'HEAD' | fzf | cut -f 2)"
+
 [credential]
 	helper = osxkeychain
 [push]
