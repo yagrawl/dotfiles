@@ -29,6 +29,12 @@
   # credit: https://github.com/mculp/dotfiles/blob/main/dot_gitconfig#L10
   sw = "!git switch $(git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | ag -v '^\\*' | ag -v 'HEAD' | fzf | cut -f 2)"
 
+  # delete merged branches locally
+  dbr = "!git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | ag -v '^\\*' | ag -v 'HEAD' | fzf | cut -f 2 | xargs git branch -d"
+
+  # delete local branch
+  Dbr = "!git branch --sort=-committerdate --format='%(committerdate:relative)%09%(refname:short)' | ag -v '^\\*' | ag -v 'HEAD' | fzf | cut -f 2 | xargs git branch -D"
+
 [credential]
 	helper = osxkeychain
 [push]
