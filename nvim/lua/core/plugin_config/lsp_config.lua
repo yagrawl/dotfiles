@@ -93,64 +93,44 @@ require("lspsaga").setup({
   },
 })
 
-local lspconfig = require('lspconfig')
-
--- Define an on_attach function to set up keybindings
--- local on_attach = function(_, bufnr)
---   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
---   local opts = { noremap=true, silent=true }
-
---   -- Define keybindings for LSP functions
---   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
---   buf_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
---   buf_set_keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
---   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
---   buf_set_keymap({ 'n', 'v' }, 'ca', '<Cmd>lspsaga code_action()<CR>', opts)
--- end
-
-local lsp_defaults = lspconfig.util.default_config
-
-lsp_defaults.capabilities = vim.tbl_deep_extend(
-  'force',
-  lsp_defaults.capabilities,
-  require('cmp_nvim_lsp').default_capabilities()
-)
+-- Global LSP capabilities (for nvim-cmp completion)
+vim.lsp.config['*'] = {
+  capabilities = require('cmp_nvim_lsp').default_capabilities()
+}
 
 -- Solargraph for Ruby
-lspconfig.solargraph.setup {
+vim.lsp.config.solargraph = {
   filetypes = { 'ruby' },
   settings = {
     solargraph = {
       diagnostics = true
     }
   },
-  on_attach = on_attach
 }
 
 -- ESLint for JavaScript
-lspconfig.eslint.setup {
+vim.lsp.config.eslint = {
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-  root_dir = function() return vim.fn.getcwd() end,
-  on_attach = on_attach
+  root_markers = { '.eslintrc', '.eslintrc.js', '.eslintrc.json', 'package.json' },
 }
 
--- Typescropt language server
-lspconfig.ts_ls.setup {
+-- TypeScript language server
+vim.lsp.config.ts_ls = {
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
-  on_attach = on_attach
 }
 
 -- Lua language server
-lspconfig.lua_ls.setup {
+vim.lsp.config.lua_ls = {
   filetypes = { 'lua' },
-  on_attach = on_attach
 }
 
 -- JSON language server
-lspconfig.jsonls.setup {
+vim.lsp.config.jsonls = {
   filetypes = { 'json' },
-  on_attach = on_attach
 }
+
+-- Enable all configured servers
+vim.lsp.enable({ 'solargraph', 'eslint', 'ts_ls', 'lua_ls', 'jsonls' })
 
 -- add binding to launch terminal
 vim.keymap.set('n', '\\t', ':Lspsaga term_toggle<CR>')
