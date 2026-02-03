@@ -9,9 +9,15 @@
   st = status
   br = branch
 
+  # amend the last commit
+  amend = commit --amend
+
   # checkout 'main'/'master' branch and pull latest changes
   main = !git co main && git pull
   master = !git co master && git pull
+
+  # force push to remote
+  fpush = !git push --force-with-lease
 
   # see your staged changes
   staged = diff --cached

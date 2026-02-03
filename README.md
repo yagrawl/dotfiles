@@ -74,3 +74,51 @@ Run the setup script with `./setup.sh`. This will establish symbolic links betwe
 ## Fonts
 
 For fonts, find one you like at [Nerd Fonts](https://www.nerdfonts.com/font-downloads). I keep switching between [MesloLG](https://www.programmingfonts.org/#meslo) and [Inconsolata](https://www.programmingfonts.org/#inconsolata)
+
+## Where to Add Things
+
+| What | Where |
+|------|-------|
+| Zsh aliases & exports | `.zshrc` |
+| Zsh prompt customization | `.p10k.zsh` (run `p10k configure` to regenerate) |
+| Git aliases | `.gitconfig` under `[alias]` |
+| Tmux keybindings & settings | `.tmux.conf` |
+| Tmux plugins | `.tmux.conf` under the plugin section |
+| Neovim plugins | `nvim/lua/core/plugins.lua` |
+| Neovim plugin configs | `nvim/lua/core/plugin_config/` (create a new file and require it in `init.lua`) |
+| Neovim keymaps | `nvim/lua/core/keymaps.lua` |
+| Neovim options | `nvim/lua/core/options.lua` |
+
+## Useful Commands
+
+After making changes, you'll need to reload configs or install plugins:
+
+**Zsh**
+```bash
+source ~/.zshrc          # reload zsh config
+```
+
+**Tmux**
+```bash
+tmux source ~/.tmux.conf # reload tmux config (or prefix + r if you have the binding)
+prefix + I               # install tmux plugins (capital I)
+prefix + U               # update tmux plugins
+```
+
+**Neovim**
+```vim
+:PackerSync              " install/update plugins
+:PackerCompile           " recompile plugin config
+:Mason                   " manage LSP servers
+:checkhealth             " debug issues
+```
+
+**Git Aliases** (from `.gitconfig`)
+```bash
+git st                   # status
+git co <branch>          # checkout
+git ci "message"         # commit -m
+git main                 # checkout main and pull
+git sw                   # fuzzy switch branches
+git aliases              # list all aliases
+```

@@ -37,6 +37,9 @@ alias dc="docker-compose"
 alias dp="docker ps"
 alias di="docker images"
 
+# custom
+alias setup_apps="cd ~/Workspace/scripts && ./setup_apps.sh"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

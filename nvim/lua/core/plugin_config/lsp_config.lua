@@ -135,7 +135,7 @@ lspconfig.eslint.setup {
 }
 
 -- Typescropt language server
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact' },
   on_attach = on_attach
 }
